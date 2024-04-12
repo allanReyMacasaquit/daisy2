@@ -7,9 +7,11 @@ const FormRange = ({ label, name, size }) => {
 	const [selectedPrice, setSelectedPrice] = useState(maxPrice);
 	return (
 		<div className='form-control'>
-			<label htmlFor={name} className='label cursor-pointer'>
+			<label htmlFor={name} className='label '>
 				<span className='label-text-alt capitalize'>{label}</span>
-				<span>{formatPrice(selectedPrice)}</span>
+				<span className='text-xs tracking-widest'>
+					{formatPrice(selectedPrice)}
+				</span>
 			</label>
 			<input
 				type='range'
@@ -19,7 +21,7 @@ const FormRange = ({ label, name, size }) => {
 				value={selectedPrice}
 				onChange={(e) => setSelectedPrice(e.target.value)}
 				step={step}
-				className={`range range-secondary ${size}`}
+				className={`range range-secondary cursor-pointer ${size}`}
 			/>
 		</div>
 	);
