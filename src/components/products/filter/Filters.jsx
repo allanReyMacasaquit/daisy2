@@ -64,9 +64,9 @@ const Filters = () => {
 			<button type='submit' className='btn btn-secondary btn-sm uppercase'>
 				submit
 			</button>
-			<button className='btn btn-primary btn-sm uppercase'>
-				<Link to='/products'>reset</Link>
-			</button>
+			<Link to='/products' className='btn btn-primary btn-sm uppercase'>
+				reset
+			</Link>
 		</Form>
 	);
 };

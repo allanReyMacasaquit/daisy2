@@ -16,6 +16,7 @@ const Products = () => {
 	return (
 		<>
 			<Filters />
+			<PaginationContainer />
 			<ProductsContainer />
 			<PaginationContainer />
 		</>
