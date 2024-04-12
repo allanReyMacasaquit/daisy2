@@ -1,8 +1,8 @@
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useLoaderData } from 'react-router-dom';
 import FormInput from '../../form/FormInput';
-import FormSelect from './FormSelect';
-import { useLoaderData } from 'react-router-dom';
-import FormRange from './FormRange';
+import FormSelect from '../../form/FormSelect';
+import FormRange from '../../form/FormRange';
+import FormCheckbox from '../../form/FormCheckbox';
 
 const Filters = () => {
 	const { meta } = useLoaderData();
@@ -38,18 +38,20 @@ const Filters = () => {
 				size='select-sm'
 				list={['a-z', 'z-a', 'high', 'low']}
 			/>
-			{/* FORMRANGE */}
+			{/* PRICE */}
 			<FormRange name='price' label='select price' size='range-sm' />
 
+			{/* SHIPPING */}
+			<FormCheckbox name='shipping' label='free shipping' size='checkbox-sm' />
+
 			{/* BUTTONS */}
-			<div className='flex justify-between items-center '>
-				<button type='submit' className='btn btn-secondary btn-sm uppercase'>
-					submit
-				</button>
-				<button className='btn btn-primary btn-sm uppercase'>
-					<Link to='/products'>reset</Link>
-				</button>
-			</div>
+
+			<button type='submit' className='btn btn-secondary btn-sm uppercase'>
+				submit
+			</button>
+			<button className='btn btn-primary btn-sm uppercase'>
+				<Link to='/products'>reset</Link>
+			</button>
 		</Form>
 	);
 };

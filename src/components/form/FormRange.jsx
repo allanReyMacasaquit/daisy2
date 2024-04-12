@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { formatPrice } from '../../../utils';
+import { formatPrice } from '../../utils';
 
 const FormRange = ({ label, name, size }) => {
 	const step = 1000;
@@ -21,10 +21,6 @@ const FormRange = ({ label, name, size }) => {
 				step={step}
 				className={`range range-secondary ${size}`}
 			/>
-			<div className='w-full flex justify-between text-sm px-2 mt-2'>
-				<span className='text-md'>0</span>
-				<span className='text-md'>{maxPrice}</span>
-			</div>
 		</div>
 	);
 };
