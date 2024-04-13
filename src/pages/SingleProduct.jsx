@@ -25,14 +25,15 @@ const SingleProduct = () => {
 	const dispatch = useDispatch();
 
 	const cartProduct = {
-		cartId: product.id + productColor,
+		cartID: product.id + productColor,
 		productID: product.id,
+		productColor,
 		image,
 		title,
 		price,
-		productColor,
-		company,
 		amount,
+
+		company,
 	};
 
 	const addToCart = () => {
