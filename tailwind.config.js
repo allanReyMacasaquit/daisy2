@@ -4,6 +4,7 @@ export default {
 	theme: {
 		extend: {},
 	},
+	// eslint-disable-next-line no-undef
 	plugins: [require('@tailwindcss/typography'), require('daisyui')],
 	daisyui: {
 		themes: ['light', 'dim'],

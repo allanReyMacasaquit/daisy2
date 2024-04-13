@@ -32,7 +32,6 @@ const SingleProduct = () => {
 		title,
 		price,
 		amount,
-
 		company,
 	};
 
