@@ -109,10 +109,16 @@ const SingleProduct = () => {
 						</select>
 					</div>
 					{/* CART BUTTON */}
-					<div className='mt-10 '>
-						<button className='btn btn-secondary  lg:mt-6' onClick={addToCart}>
+					<div className='mt-10 flex justify-between items-center'>
+						<button className='btn btn-primary  lg:mt-6' onClick={addToCart}>
 							Add to bag
 						</button>
+						{/* CART LINK*/}
+						<Link to='/cart'>
+							<div className='indicator'>
+								<span className='btn btn-secondary  lg:mt-6'>Go to Cart</span>
+							</div>
+						</Link>
 					</div>
 				</div>
 			</div>
