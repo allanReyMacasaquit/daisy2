@@ -62,9 +62,7 @@ const SingleProduct = () => {
 				{/* PRODUCT INFO */}
 				<div>
 					<h1 className='capitalize text-3xl font-bold'>{title}</h1>
-					<h4 className='text-xl text-neutral-content font-bold mt-2'>
-						{company}
-					</h4>
+					<h4 className='text-xl font-bold mt-2'>{company}</h4>
 
 					<p className='mt-3 text-xl'>{dollarsAmount}</p>
 
@@ -100,7 +98,7 @@ const SingleProduct = () => {
 							</h4>
 						</label>
 						<select
-							className='select select-accent shadow-md shadow-slate-500 select-md'
+							className='select select-accent text-sm sm:text-2xl border-none shadow shadow-slate-500 select-md'
 							value={amount}
 							onChange={handleAmount}
 						>
@@ -108,14 +106,24 @@ const SingleProduct = () => {
 						</select>
 					</div>
 					{/* CART BUTTON */}
-					<div className='mt-10 flex justify-between items-center'>
-						<button className='btn btn-primary  lg:mt-6' onClick={addToCart}>
+					<div className='mt-10 flex justify-between items-center '>
+						<button
+							className='btn btn-primary text-xs sm:text-sm  lg:mt-6'
+							onClick={addToCart}
+						>
 							Add to bag
 						</button>
+						<Link to='/products'>
+							<span className='btn mx-2 text-xs sm:text-lg lg:mt-6 shadow-md shadow-slate-500'>
+								Continue Shopping
+							</span>
+						</Link>
 						{/* CART LINK*/}
 						<Link to='/cart'>
-							<div className='indicator'>
-								<span className='btn btn-secondary  lg:mt-6'>Go to Cart</span>
+							<div>
+								<span className='btn btn-secondary text-xs sm:text-sm  lg:mt-6'>
+									Go to Cart
+								</span>
 							</div>
 						</Link>
 					</div>
