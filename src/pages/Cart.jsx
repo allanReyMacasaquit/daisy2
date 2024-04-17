@@ -22,7 +22,7 @@ const Cart = () => {
 						alt='Empty-cart'
 						className=' items-center h-[50vh] w-[50vh]'
 					/>
-					<SectionTitle text='Opps! Cart is empty' />
+					<h3 className='text-2xl text-secondary'>Opps! Cart is empty</h3>
 				</div>
 			</>
 		);
