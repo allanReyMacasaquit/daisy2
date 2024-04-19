@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import login from '../assets/login.png';
 import checkout from '../assets/checkout.png';
 import EmptyCart from '../assets/empty-cart.png';
+
 const Cart = () => {
-	const user = null;
+	const user = useSelector((state) => state.userState.user);
 	const { numItemsInCart } = useSelector((state) => state.cartState);
 	if (numItemsInCart === 0) {
 		return (
@@ -47,7 +48,7 @@ const Cart = () => {
 							className='btn btn-primary btn-block mt-8 tracking-wider'
 						>
 							<img src={checkout} alt='checkout' className='h-8' />
-							Checkout
+							<p className='text-primary-content text-xl'>Checkout</p>
 						</Link>
 					) : (
 						<Link
