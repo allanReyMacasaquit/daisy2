@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import {
-	About,
+	AboutPage,
 	Cart,
 	Checkout,
 	Error,
@@ -16,6 +16,10 @@ import { ErrorElement } from './components';
 import { loader as LandingLoader } from './pages/Landing';
 import { loader as SingleProductLoader } from './pages/SingleProduct';
 import { loader as ProductsLoader } from './pages/Products';
+import { action as RegisterAction } from './pages/Register';
+import { action as LoginAction } from './pages/Login';
+import { store } from './features/store/configureStore';
+
 const router = createBrowserRouter([
 	{
 		path: '/',
@@ -46,7 +50,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'about',
-				element: <About />,
+				element: <AboutPage />,
 			},
 			{
 				path: 'checkout',
@@ -62,11 +66,13 @@ const router = createBrowserRouter([
 		path: '/login',
 		element: <Login />,
 		errorElement: <Error />,
+		action: LoginAction(store),
 	},
 	{
 		path: '/register',
 		element: <Register />,
 		errorElement: <Error />,
+		action: RegisterAction,
 	},
 ]);
 

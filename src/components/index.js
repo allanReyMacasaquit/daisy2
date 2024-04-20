@@ -15,3 +15,5 @@ export { default as Loading } from './loading/Loading';
 export { default as CartItem } from './cart/CartItem';
 export { default as CartItemsList } from './cart/CartItemsList';
 export { default as CartTotals } from './cart/CartTotals';
+export { default as Footer } from './footer/Footer';
+export { default as About } from './about/About';

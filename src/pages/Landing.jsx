@@ -1,6 +1,7 @@
 import { FeaturedProducts, Hero } from '../components';
+import Footer from '../components/footer/Footer';
 import { customFetch } from '../utils';
-import About from './About';
+import AboutPage from './AboutPage';
 
 const featuredUrl = '/products?featured=true';
 export const loader = async () => {
@@ -13,8 +14,9 @@ const Landing = () => {
 	return (
 		<>
 			<Hero />
-			<About />
+			<AboutPage />
 			<FeaturedProducts />
+			<Footer />
 		</>
 	);
 };
