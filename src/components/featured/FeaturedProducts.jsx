@@ -6,7 +6,7 @@ export const loader = async () => {
 };
 const FeaturedProducts = () => {
 	return (
-		<div className='pt-24 '>
+		<div className='pt-10 sm:pt-56 '>
 			<SectionTitle text='featured products' />
 			<ProductsGrid />
 		</div>

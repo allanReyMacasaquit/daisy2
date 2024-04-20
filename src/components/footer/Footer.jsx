@@ -17,8 +17,8 @@ const Footer = () => {
 	const currentDate = new Date().getFullYear();
 
 	return (
-		<footer className='footer footer-center py-10 mt-10 '>
-			<div className='border-b border-y p-3 w-full bg-base-300 rounded-xl'>
+		<footer className='footer footer-center py-8 mt-6 '>
+			<div className='border-y p-3 w-full bg-base-300 rounded-xl'>
 				<p>Thank you for visiting Daisy.</p>
 				<p>Stay connected</p>
 				<div className='flex space-x-2'>
