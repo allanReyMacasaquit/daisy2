@@ -17,3 +17,4 @@ export { default as CartItemsList } from './cart/CartItemsList';
 export { default as CartTotals } from './cart/CartTotals';
 export { default as Footer } from './footer/Footer';
 export { default as About } from './about/About';
+export { default as Checkout } from './checkout/CheckoutForm';

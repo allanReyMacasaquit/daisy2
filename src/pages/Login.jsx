@@ -1,9 +1,10 @@
-import { Form, Link, redirect, useNavigate } from 'react-router-dom';
-import { FormInput, SubmitBtn } from '../components';
+import { Form, Link, redirect, useNavigation } from 'react-router-dom';
+import { FormInput, Loading, SubmitBtn } from '../components';
 import { customFetch } from '../utils';
 import { toast } from 'react-toastify';
 import { loginUser } from '../features/user/userSlice';
-import { useDispatch } from 'react-redux';
+import GuestBtn from '../components/guestBtn/GuestBtn';
+
 export const action =
 	(store) =>
 	async ({ request }) => {
@@ -24,22 +25,8 @@ export const action =
 	};
 
 const Login = () => {
-	const dispatch = useDispatch();
-	const navigate = useNavigate();
-	const loginAsGuestUser = async () => {
-		try {
-			const response = await customFetch.post('/auth/local', {
-				identifier: 'test@test.com',
-				password: 'secret',
-			});
-			dispatch(loginUser(response.data));
-			toast.success('Welcome Guest User');
-			navigate('/');
-		} catch (error) {
-			console.log(error);
-			toast.error('Please try later.');
-		}
-	};
+	const navigation = useNavigation();
+	const isPageLoading = navigation.state === 'loading';
 
 	return (
 		<section className='h-screen grid place-items-center'>
@@ -51,15 +38,11 @@ const Login = () => {
 				<FormInput type='email' label='email' name='identifier' />
 				<FormInput type='password' label='password' name='password' />
 				<div className='mt-4'>
-					<SubmitBtn text='Login' />
+					{isPageLoading ? <Loading /> : <SubmitBtn text='Login' />}
 				</div>
-				<button
-					type='button'
-					className='btn btn-accent btn-block capitalize '
-					onClick={loginAsGuestUser}
-				>
-					guest user
-				</button>
+				<div>
+					<GuestBtn />
+				</div>
 				<p className='text-center'>
 					Not yet a member?
 					<Link
