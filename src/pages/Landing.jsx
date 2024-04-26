@@ -7,7 +7,6 @@ const featuredUrl = '/products?featured=true';
 export const loader = async () => {
 	const response = await customFetch(featuredUrl);
 	const products = response.data.data;
-	// console.log(featuredProducts);
 	return { products };
 };
 const Landing = () => {

@@ -23,7 +23,6 @@ const GuestBtn = () => {
 			setLoading(false);
 			navigate('/');
 		} catch (error) {
-			console.log(error);
 			toast.error('Please try later.');
 		}
 	};

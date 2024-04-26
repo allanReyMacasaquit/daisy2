@@ -23,7 +23,7 @@ const Navbar = () => {
 						<span className='text-secondary italic uppercase ml-2'>store</span>
 					</NavLink>
 					{/* DROPDOWN */}
-					<div className='dropdown opacity-95'>
+					<div className='dropdown opacity-95 z-10'>
 						<label tabIndex={0} className='btn btn-ghost lg:hidden'>
 							<FaBarsStaggered className='h-6 w-6' />
 						</label>
